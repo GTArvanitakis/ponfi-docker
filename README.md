@@ -22,7 +22,7 @@ This will create and start the containers defined in [docker-compose.yml](./dock
 
 ### Hot Reload with Nodemon
 
-To enable hot reload while doing local development using `nodemon`, use [docker-compose.dev.yml](./docker-compose.dev.yml) instead:
+To enable hot reload while doing local development using `nodemon`, setup the containers using [docker-compose.dev.yml](./docker-compose.dev.yml) instead:
 
 ```bash
 docker compose --file docker-compose.dev.yml up
