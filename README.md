@@ -8,26 +8,22 @@ Handle all your tasks with Ponfi - your new refurbished Task Management System.
 
 If you're following along with the GDSC Introduction to Software Engineering workshop, the easiest way to get started will be to use GitHub Codespaces which already has everything we need installed.
 
-### Setting up on codespaces
-
-### Setting up locally
-
 If you would prefer to setup and run locally then you'll need to [install docker](https://docs.docker.com/engine/install/).
 
-## Setup
+## Running Ponfi with Docker
 
-Clone this repository and install all the dependencies with `npm`:
+You can start the application by running:
+
 ```bash
-git clone https://github.com/cybercoder-naj/ponfi.git
-npm install
+docker compose up
 ```
 
-Create a file named `.env`, this will have two environment variables - PORT and MONGO_URI.
+This will create and start the containers defined in [docker-compose.yml](./docker-compose.yml).
 
-## Run development server
+### Local Development
 
-You can run the server in two ways. With the `start` script, the server won't reflect any changes made to file; while the `dev` script will.
+To enable hot reload while doing local development using `nodemon`, use [docker-compose.dev.yml](./docker-compose.dev.yml) instead:
+
 ```bash
-npm run dev
+docker compose --file docker-compose.dev.yml up
 ```
-
