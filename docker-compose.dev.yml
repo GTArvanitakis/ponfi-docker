@@ -1,4 +1,23 @@
 version: '3.1'
 
-# TODO: create dev compose file from main compose file
+# TODO: Add mongo and server services
 services:
+  my-mongo:
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: tst
+
+  my-server:
+    build: .
+    command: npm run dev
+    environment:
+      -  PORT = 3000
+      -  MONGO_URI = mongodb://root:tst@mongo:27017/
+    ports:
+      -  3000:3000
+    depends_on:
+      -  my-mongo
+    volumes:
+      - .:/usr/src/app
