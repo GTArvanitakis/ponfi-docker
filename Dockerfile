@@ -1,3 +1,4 @@
+# Specify base image
 FROM node:16
 
 # Create app directory
